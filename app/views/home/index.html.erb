@@ -1,5 +1,11 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
+<% if moussaillon_signed_in? %>
+	
+<% end %> 
+
+
+
 
 
 <ul>
@@ -14,17 +20,24 @@
 <li>
     <%= current_moussaillon.username2 %>
 </li>  
+
 <li>
-    <%= current_moussaillon.username %>
+    <%= link_to "create a gossip", gossips_new_path %>
 </li>  
+
 <li>
 	<p> Liste de tous les gossips </p>
 </li>
 <% else %>
-<li>
-    <%= link_to "Sign In", new_moussaillon_session_path %>
-</li>
-<li>
-    <%= link_to "Sign Up", new_moussaillon_registration_path %>
-</li>
+<div class="container">
+	<li>
+	    <%= link_to "Sign In", new_moussaillon_session_path %>
+	</li>
+	<li>
+	    <%= link_to "Sign Up", new_moussaillon_registration_path %>
+	</li>
+	<li>
+		<p> Merci de vous connecter</p>
+	</li>
+</div>
 <% end %> 
